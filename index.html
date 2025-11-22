@@ -1,78 +1,44 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Workout Planner</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            padding: 30px;
-        }
-        .box {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 450px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        input, select, button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background: #007bff;
-            color: white;
-            border: none;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #0056c0;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>AI Fitness Trainer</title>
+<style>
+body { font-family: Arial; max-width: 600px; margin: auto; padding: 20px; }
+label { display: block; margin: 10px 0; }
+button { margin-top: 10px; }
+#output { margin-top: 20px; white-space: pre-wrap; }
+</style>
 </head>
 <body>
-
-<div class="box">
-    <h2>สร้างตารางออกกำลังกายด้วย AI</h2>
-
-    <label>อายุ</label>
-    <input type="number" id="age">
-
-    <label>น้ำหนัก (kg)</label>
-    <input type="number" id="weight">
-
-    <label>เป้าหมาย</label>
-    <select id="goal">
-        <option>ลดน้ำหนัก</option>
-        <option>เพิ่มกล้าม</option>
-        <option>กระชับสัดส่วน</option>
+<h2>AI Fitness Trainer</h2>
+<form id="fitnessForm">
+  <label>อายุ: <input type="number" name="age" required></label>
+  <label>เพศ: 
+    <select name="gender" required>
+      <option value="male">ชาย</option>
+      <option value="female">หญิง</option>
     </select>
+  </label>
+  <label>ระดับความฟิต: 
+    <select name="fitnessLevel" required>
+      <option value="beginner">เริ่มต้น</option>
+      <option value="intermediate">ปานกลาง</option>
+      <option value="advanced">ขั้นสูง</option>
+    </select>
+  </label>
+  <label>เป้าหมาย: 
+    <select name="goal" required>
+      <option value="weight_loss">ลดน้ำหนัก</option>
+      <option value="muscle_gain">เพิ่มกล้ามเนื้อ</option>
+      <option value="flexibility">ยืดหยุ่น/ฟิต</option>
+    </select>
+  </label>
+  <button type="submit">สร้างตาราง</button>
+</form>
 
-    <button onclick="generate()">สร้างตารางออกกำลังกาย</button>
+<div id="output"></div>
 
-    <pre id="result"></pre>
-</div>
-
-<script>
-function generate() {
-    let age = document.getElementById("age").value;
-    let weight = document.getElementById("weight").value;
-    let goal = document.getElementById("goal").value;
-
-    document.getElementById("result").textContent =
-        "อายุ: " + age +
-        "\\nน้ำหนัก: " + weight + " kg" +
-        "\\nเป้าหมาย: " + goal +
-        "\\n\\n📌 *ตอนนี้เว็บมึงสร้างฟอร์มเสร็จแล้ว*";
-}
-</script>
-
+<script src="app.js"></script>
 </body>
 </html>

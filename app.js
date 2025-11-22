@@ -5,7 +5,7 @@ document.getElementById('fitnessForm').addEventListener('submit', async function
     const data = Object.fromEntries(formData.entries());
 
     // https://basbas778.github.io/
-    const response = await fetch('https://YOUR_PROJECT_NAME.vercel.app/api/fitness', {
+    const response = await fetch('basbas778-github-io-git-main-123s-projects-635e942b.vercel.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)

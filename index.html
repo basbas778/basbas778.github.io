@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Workout Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 30px;
+        }
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 450px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056c0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>สร้างตารางออกกำลังกายด้วย AI</h2>
+
+    <label>อายุ</label>
+    <input type="number" id="age">
+
+    <label>น้ำหนัก (kg)</label>
+    <input type="number" id="weight">
+
+    <label>เป้าหมาย</label>
+    <select id="goal">
+        <option>ลดน้ำหนัก</option>
+        <option>เพิ่มกล้าม</option>
+        <option>กระชับสัดส่วน</option>
+    </select>
+
+    <button onclick="generate()">สร้างตารางออกกำลังกาย</button>
+
+    <pre id="result"></pre>
+</div>
+
+<script>
+function generate() {
+    let age = document.getElementById("age").value;
+    let weight = document.getElementById("weight").value;
+    let goal = document.getElementById("goal").value;
+
+    document.getElementById("result").textContent =
+        "อายุ: " + age +
+        "\\nน้ำหนัก: " + weight + " kg" +
+        "\\nเป้าหมาย: " + goal +
+        "\\n\\n📌 *ตอนนี้เว็บมึงสร้างฟอร์มเสร็จแล้ว*";
+}
+</script>
+
+</body>
+</html>
